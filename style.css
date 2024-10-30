@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --cyan:hsl(179, 62%, 43%);
+    --light-cyan:hsl(180, 62%, 55%);
+    --bright-yellow:hsl(71, 73%, 54%);
+    --light-gray:hsl(204, 43%, 93%);
+    --grayish-blue:hsl(218, 22%, 67%);
+    --font-karla:'Karla', sans-serif;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    background-color: var(--light-gray);
+}
+p,h1,h2,h3,h4,h5,h6{
+    overflow-wrap: break-word;
+}
+
+.container{
+    margin: 7rem 3rem;
+    font-size: 1.5rem;
+    font-family: var(--font-karla);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left{
+    padding: 3rem 2.5rem;
+    background-color: white;
+}
+.right{
+    background-color: var(--cyan);
+    color: white;
+    padding: 3rem 2.5rem;
+}
+.footer{
+    background-color: var(--light-cyan);
+    color: white;
+    padding: 3rem 2.5rem;
+}
+h1{
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.left h1{
+    color: var(--cyan);
+}
+.left h2{
+    color: var(--bright-yellow);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+.right h1{
+    color: white;
+}
+.left p{
+    color: var(--grayish-blue);
+    line-height: 2;
+    font-size: 1.3rem;
+}
+.right p{
+    color: white;
+}
+.right .price{
+    margin-bottom: 1rem;
+}
+.right .text{
+    margin-bottom: 2.5rem;
+}
+.right p span{
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+button{
+    width: 100%;
+    background-color: var(--bright-yellow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.footer p{
+    color: var(--light-gray);
+    margin-bottom: 0.3rem;
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        height: 100vh;
+    }
+    .left{
+        grid-area: left;
+    }
+    .right{
+        grid-area: right;
+    }
+    .footer{
+        grid-area: footer;
+    }
+    .container{
+        max-width: 630px;
+        display: grid;
+        grid-template-areas: "left  left"
+                             "right footer";
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .right{
+        padding: 3rem 4rem; 
+    }
+    .left p{
+        font-size: 1.7rem;
+    }
+    .left h1{
+        margin-bottom: 3rem;
+    }
+    .left h2{
+        margin-bottom: 2rem;
+    }
+}
